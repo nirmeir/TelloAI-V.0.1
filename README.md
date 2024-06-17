@@ -70,9 +70,7 @@ The script reads frames from the input video, processes each frame to detect ArU
 - The camera parameters are approximated for a 720p resolution video.
 - The ArUco marker side length is assumed to be 0.05 meters (5 cm).
 
-## Performance Monitoring
 
-The script includes timing measurements to ensure real-time performance. Processing time for each frame is printed to the console.
 
 ## Contact
 
