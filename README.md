@@ -55,6 +55,9 @@ The project includes:
     - `aruco_detection_results.csv`: A CSV file containing the frame ID, marker ID, 2D corner points, and 3D pose (distance, yaw, pitch, roll) for each detected marker.
     - `annotated_aruco_video.mp4`: A video file with annotated frames showing the detected markers and their IDs.
 
+** Image exammple of the detection:
+![detects ArUco markers](https://github.com/nirmeir/TelloAI-V.0.1/assets/24902621/1d89e151-d8e2-4461-9925-b8c0c71dc57b)
+
 ### Code Explanation
 
 #### detect_aruco_codes(frame, aruco_dict, aruco_params)
@@ -263,6 +266,8 @@ def detect_aruco_codes(frame, aruco_dict, aruco_params):
 
         cap.release()
         cv2.destroyAllWindows()
+** Image exammple of the detection and the movement commands:
+![movement_commands test](https://github.com/nirmeir/TelloAI-V.0.1/assets/24902621/4e6d925d-e0aa-4b3a-9795-3ba3de7b9d60)
 
     # Run the test
     test_generate_movement_commands()
