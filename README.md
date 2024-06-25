@@ -55,6 +55,34 @@ The project includes:
     - `aruco_detection_results.csv`: A CSV file containing the frame ID, marker ID, 2D corner points, and 3D pose (distance, yaw, pitch, roll) for each detected marker.
     - `annotated_aruco_video.mp4`: A video file with annotated frames showing the detected markers and their IDs.
 
+### Code Explanation
+
+#### detect_aruco_codes(frame, aruco_dict, aruco_params)
+
+This function detects ArUco markers in a given video frame and estimates their 3D position and orientation.
+
+```python
+def detect_aruco_codes(frame, aruco_dict, aruco_params):
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    corners, ids, _ = cv2.aruco.detectMarkers(gray, aruco_dict, parameters=aruco_params)
+    aruco_data = []
+
+    if ids is not None:
+        for i in range(len(ids)):
+            aruco_id = ids[i][0]
+            pts = corners[i][0]
+
+            # Estimate 3D position
+            aruco_2d = pts
+            aruco_3d = estimate_aruco_3d_position(pts, camera_matrix, dist_coeffs)
+
+            aruco_data.append({
+                'id': aruco_id,
+                '2d_points': aruco_2d,
+                '3d_info': aruco_3d
+            })
+
+    return aruco_data
 ### Part B: QR Code Detection and Movement Command Generation
 
 1. **Generate and save the target frame with QR codes:**
