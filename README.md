@@ -57,9 +57,12 @@ The project includes:
 
 This function detects ArUco markers in a given video frame and estimates their 3D position and orientation.
 
+
 ### estimate_aruco_3d_position(corners, camera_matrix, dist_coeffs)
 
 This function uses the detected marker corners and camera calibration parameters to estimate the 3D position and orientation of the markers.
+
+![detects ArUco markers](https://github.com/nirmeir/TelloAI-V.0.1/assets/24902621/1d89e151-d8e2-4461-9925-b8c0c71dc57b)
 
 ### Main Script
 
