@@ -61,7 +61,7 @@ def estimate_aruco_3d_position(corners, camera_matrix, dist_coeffs):
         return None, None, None, None
 
 # Load video
-video_path = 'challengeB.mp4'
+video_path = 'Part_A\challengeB.mp4'
 cap = cv2.VideoCapture(video_path)
 
 # Check if video opened successfully
@@ -104,14 +104,14 @@ cap.release()
 cv2.destroyAllWindows()
 
 # Write results to CSV
-with open('aruco_detection_results.csv', 'w', newline='') as csvfile:
+with open('Part_A/aruco_detection_results.csv', 'w', newline='') as csvfile:
     csvwriter = csv.writer(csvfile)
     csvwriter.writerow(['Frame ID', 'ArUco ID', 'Left-Up X', 'Left-Up Y', 'Right-Up X', 'Right-Up Y', 'Right-Down X', 'Right-Down Y', 'Left-Down X', 'Left-Down Y', 'Distance', 'Yaw', 'Pitch', 'Roll'])
     csvwriter.writerows(results)
 
 # Annotate video and save
 cap = cv2.VideoCapture(video_path)
-out = cv2.VideoWriter('annotated_aruco_video.mp4', cv2.VideoWriter_fourcc(*'mp4v'), fps, (frame_width, frame_height))
+out = cv2.VideoWriter('Part_A/annotated_aruco_video.mp4', cv2.VideoWriter_fourcc(*'mp4v'), fps, (frame_width, frame_height))
 frame_id = 0
 
 while cap.isOpened():
