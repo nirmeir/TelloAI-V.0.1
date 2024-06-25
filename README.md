@@ -266,9 +266,11 @@ def detect_aruco_codes(frame, aruco_dict, aruco_params):
 
         cap.release()
         cv2.destroyAllWindows()
+
+        # Run the test
+    test_generate_movement_commands()
+    ```
  Image exammple of the detection and the movement commands:
 ![movement_commands test](https://github.com/nirmeir/TelloAI-V.0.1/assets/24902621/4e6d925d-e0aa-4b3a-9795-3ba3de7b9d60)
 
-    # Run the test
-    test_generate_movement_commands()
-    ```
+
